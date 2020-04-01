@@ -4,6 +4,18 @@ class VotesController < ApplicationController
   def index
     @votes = Vote.all
     @candidates = Candidate.all
+    @vote_hash = Hash.new(0)
+    @votes.each do |vote| 
+       @vote_hash[vote.candidate_id] += 1
+    end 
+    @candidates_in_order = @candidates.sort do |c1, c2|
+      sort_order = @vote_hash[c2.id] <=> @vote_hash[c1.id]
+      if sort_order == 0
+        sort_order = c1.name <=> c2.name
+      end
+      sort_order
+    end
+
   end
 
   # GET /votes/new

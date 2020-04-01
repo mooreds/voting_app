@@ -2,14 +2,9 @@
 
 <h1>Votes</h1>
 Total votes: <%= @votes.size %>
-    <% vote_hash = Hash.new(0)
-    @votes.each do |vote| 
-       vote_hash[vote.candidate_id] += 1
-     end %>
-
-     <br/>
-    <% @candidates.each do |candidate| %>
-      Candidate <%= candidate.name %> has <%= vote_hash[candidate.id] %> votes.
+<br/>
+    <% @candidates_in_order.each do |candidate| %>
+      Candidate <%= candidate.name %> has <%= @vote_hash[candidate.id] %> votes.
       <br/>
     <% end %>
 
