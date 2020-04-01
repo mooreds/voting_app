@@ -6,20 +6,11 @@ class VotesController < ApplicationController
     @candidates = Candidate.all
   end
 
-  # GET /votes/1
-  # GET /votes/1.json
-  def show
-  end
-
   # GET /votes/new
   def new
     @candidates = Candidate.all
     @voters = Voter.all
     @vote = Vote.new
-  end
-
-  # GET /votes/1/edit
-  def edit
   end
 
   # POST /votes
@@ -29,9 +20,7 @@ class VotesController < ApplicationController
 
     respond_to do |format|
       if @vote.save
-        @votes = Vote.all
-        @candidates = Candidate.all
-        format.html { redirect_to :index, notice: 'Vote was successfully created.' }
+        format.html { redirect_to votes_path, notice: 'Vote was successfully tallied.' }
       else
         format.html { render :new }
       end
