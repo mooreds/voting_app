@@ -1,5 +1,7 @@
 # README
 
+This is a test exercise for a code challenge I did for an interview.
+
 Using Ruby create a web application that simulates a voting application.
 
 The application should support the following functionality (CLI or RAILS is acceptable)
