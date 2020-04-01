@@ -13,3 +13,14 @@ The application should support the following functionality (CLI or RAILS is acce
 4) Provide an interface to view the tabulated results
    - view should be sorted by # of Votes descending
    - for ties, the Candidates should be sorted alphabetically
+
+
+## Develop
+
+rails s 
+
+## Test
+
+rails test
+
+
