@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Votes</h1>
+Total votes: <%= @votes.size %>
+    <% vote_hash = Hash.new(0)
+    @votes.each do |vote| 
+       vote_hash[vote.candidate_id] += 1
+     end %>
+
+     <br/>
+    <% @candidates.each do |candidate| %>
+      Candidate <%= candidate.name %> has <%= vote_hash[candidate.id] %> votes.
+      <br/>
+    <% end %>
+
+<br>
+
+<%= link_to 'New Vote', new_vote_path %>
