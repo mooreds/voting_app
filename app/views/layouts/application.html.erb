@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <%= link_to 'Voters', voters_path %> |
+    <%= link_to 'Candidates', candidates_path %> |
+    <%= link_to 'Votes', votes_path %> 
+    <hr>
     <%= yield %>
   </body>
 </html>
